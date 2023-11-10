@@ -8,8 +8,19 @@ let camera, scene, renderer, controls;
 
 let model; //variable for the model
 
-init();
-animate();
+import WebGL from "three/addons/capabilities/WebGL.js";
+
+if (WebGL.isWebGLAvailable()) {
+  // Initiate function or other initializations here
+  init();
+  animate();
+} else {
+  const warning = WebGL.getWebGLErrorMessage();
+  document.getElementById("container").appendChild(warning);
+}
+
+// init();
+// animate();
 
 //this function initializes the sketch
 function init() {
@@ -36,7 +47,6 @@ function init() {
 
   //creating a new threejs scene
   scene = new THREE.Scene();
-
 
   //adding lights
   const hemisphereLight = new THREE.HemisphereLight(0xfceafc, 0x000000, 1);

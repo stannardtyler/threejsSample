@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Threejs Sample</h1>
+
+    <p>
+      Welcome to this simple example of three js. Basically the three js library
+      is being loaded from the web rather than local library files.
+    </p>
+    <p>
+      Loading the library files this way is beneficial in two ways as it speeds
+      up the load time of the website and can run locally as well. However, not
+      having an internet connection you won't be able to make any edits. In this
+      case you'll want to download the libraries from the
+      <a href="threejs.com">threejs website</a>
+    </p>
+    <p>
+      The first link is a sample file that contains an html file with a <em>script</em> syntax that loads the libraries. Next, the js file with the same name loads these libraries at the top.
+    </p>
+    <p><a href="sample-url.html">sample with URL files</a></p>
+
+    <p>Adding additional addons and features of the threejs library will require additional loaders and libaries. For this, you'll need to follow the same directory flow as if you are loading the files locally. Review this file to see how the gltfloader addon is being called. This "directory" flow is defined in the html page of the same name in the <em>script</em> syntax, same as in the sample file.</p>
+    <p>So to load the addon for the gltf-loader, which is visible here as an <a href="https://threejs.org/examples/?q=gltf#webgl_loader_gltf">live site example</a> // <a href="https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_gltf.html">github repo code</a>, we follow the same directory but place it within the js file. Example:</p>
+    <p><em>This is how the addon javascript files are loaded on the html page ->> </em><br> "three/addons/": "https://unpkg.com/three/examples/jsm/"</p>
+
+    <p><em>The gltf-loader has the following directory path ->> </em><br>three.js/examples
+      /webgl_loader_gltf.html</p>
+
+      <p>
+        So we write it the following in the three js file:
+        <br>
+        <br>
+        import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+      </p>
+
+      <p>This is the same way the examples are loaded. I'd recommend you to attempt to load the examples in with this start repo as separate html and javascript files and link them in a similar way. Make multiple pages with different names to keep previous versions as prototypes.</p>
+    <p><a href="gltf-loader-url.html">gltf-loader</a></p>
+  </body>
+</html>
